@@ -1,0 +1,1 @@
+let number = getRandomInt(1, 11);
