@@ -11,7 +11,10 @@ function ppl_response(response) {
   }
 }
 
-// const form = document.getElementById("searchForm");
-// form.addEventListener("submit", function(e){
-
-// })
+const form = document.getElementById("searchForm");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const value = document.getElementById("title").value;
+  const userAns = Number(value);
+  ppl_response(userAns);
+});
