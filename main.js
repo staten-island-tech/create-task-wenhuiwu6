@@ -4,10 +4,13 @@ const number = numbers[Math.floor(Math.random() * numbers.length)];
 console.log(number);
 
 function ppl_response(response) {
+  const respond = document.getElementById("result");
   if (response === number) {
-    console.log("bingo! ur correct!");
+    // console.log("bingo! ur correct!");
+    respond.innerHTML = "bingo! ur correct!";
   } else {
-    console.log("oops. try again.");
+    // console.log("oops. try again.");
+    respond.innerHTML = "oops. try again.";
   }
 }
 
@@ -18,3 +21,7 @@ form.addEventListener("submit", function (e) {
   const userAns = Number(value);
   ppl_response(userAns);
 });
+
+function redo() {
+  const respond = document.getElementById("restart");
+}
