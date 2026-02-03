@@ -1,6 +1,9 @@
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const number = numbers[Math.floor(Math.random() * numbers.length)];
+function RanNum() {
+  return numbers[Math.floor(Math.random() * numbers.length)];
+}
+let number = RanNum();
 console.log(number);
 
 function ppl_response(response) {
@@ -22,6 +25,12 @@ form.addEventListener("submit", function (e) {
   ppl_response(userAns);
 });
 
-function redo() {
-  const respond = document.getElementById("restart");
+const restart = document.getElementById("restart");
+if (restart) {
+  restart.addEventListener("click", function () {
+    number = RanNum();
+    console.log(number);
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("title").value = "";
+  });
 }
