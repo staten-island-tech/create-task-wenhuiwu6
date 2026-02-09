@@ -5,12 +5,16 @@ function RanNum() {
 }
 let number = RanNum();
 console.log(number);
+
 function ppl_response(response) {
   const respond = document.getElementById("result");
   if (response === number) {
-    respond.innerHTML = "bingo! ur correct!";
+    respond.innerHTML =
+      "Bingo! Your correct! A new number has also been generated. ";
+    number = RanNum();
+    console.log(number);
   } else {
-    respond.innerHTML = "oops. try again.";
+    respond.innerHTML = "Oops. Try again.";
   }
 }
 
@@ -27,6 +31,7 @@ if (restart) {
   restart.addEventListener("click", function () {
     number = RanNum();
     console.log(number);
-    document.getElementById("result").innerHTML = "";
+    document.getElementById("result").innerHTML =
+      "A new number has been generated. ";
   });
 }
